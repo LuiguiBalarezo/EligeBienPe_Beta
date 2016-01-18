@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.Fragment_Login">
+
+    <View
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/back_logo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/back_content_login"
+        android:padding="10dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/relativeLayout">
+
+        <Button
+            android:id="@+id/btn_face"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/back_btn_face"
+            android:drawableLeft="@drawable/facebook"
+            android:text="Inicia sesion con Facebook"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/btn_twitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_face"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_btn_twitter"
+            android:drawableLeft="@drawable/twitter"
+            android:paddingLeft="10dp"
+            android:text="Inicia sesion con Twitter"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/btn_plus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_twitter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/back_btn_plus"
+            android:drawableLeft="@drawable/google_plus"
+            android:paddingLeft="10dp"
+            android:text="Inicia sesion con Google"
+            android:textColor="@android:color/background_light" />
+
+        <RelativeLayout
+            android:id="@+id/rltv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_plus">
+
+            <TextView
+                android:id="@+id/txt_o"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="o" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/txt_o"
+                android:layout_toRightOf="@+id/txt_o"
+                android:background="@android:color/holo_red_dark" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/txt_o"
+                android:layout_toStartOf="@+id/txt_o"
+                android:background="@android:color/holo_red_dark" />
+
+        </RelativeLayout>
+
+        <Button
+            android:textSize="11sp"
+            android:id="@+id/btn_entrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rltv_2"
+            android:background="@drawable/back_btn_primary"
+            android:text="Entrar"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:textSize="11sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/btn_entrar"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/back_btn_primary"
+            android:text="Crear Cuenta"
+            android:textColor="@android:color/background_light"
+            android:id="@+id/btn_crear" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olvido Contraseña?"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignLeft="@+id/relativeLayout"
+        android:layout_alignStart="@+id/relativeLayout"
+        android:textSize="9sp"
+        android:id="@+id/btn_contrasena" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresar como invitado"
+        android:id="@+id/btn_invitado"
+        android:textSize="9sp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignRight="@+id/relativeLayout"
+        android:layout_alignEnd="@+id/relativeLayout" />
+
+
+</RelativeLayout>

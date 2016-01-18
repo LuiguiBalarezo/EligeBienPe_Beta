@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.Fragment_Login">
+
+    <View
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/back_logo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/back_content_login"
+        android:padding="10dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/relativeLayout">
+
+        <EditText
+            android:id="@+id/edt_nombre"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"/>
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:id="@+id/edt_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_nombre"
+            android:hint="Correo"/>
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/edt_edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_correo"
+            android:hint="Edad"/>
+
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/edt_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_edad"
+            android:hint="Contraseña"/>
+
+        <Button
+            android:textSize="11sp"
+            android:id="@+id/btn_entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_btn_primary"
+            android:text="Crear"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@android:color/background_light"
+            android:layout_below="@+id/edt_contrasena"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
