@@ -21,13 +21,13 @@ public class Fragment_Login extends Fragment {
     EventsLogin eventsLogin;
 
     public interface EventsLogin {
-        public void onClikEntrar();
+        void onClikEntrar();
 
-        public void onClickCrear();
+        void onClickCrear();
 
-        public void onClickInvitado();
+        void onClickInvitado();
 
-        public void onClickContrasena();
+        void onClickContrasena();
     }
 
 
@@ -56,9 +56,14 @@ public class Fragment_Login extends Fragment {
 
         v = inflater.inflate(R.layout.fragment_login, container, false);
         btn_entrar = (Button)v.findViewById(R.id.btn_entrar);
-        btn_crear = (Button)v.findViewById(R.id.btn_entrar);
+        btn_crear = (Button)v.findViewById(R.id.btn_crear);
         btn_contrasena = (Button)v.findViewById(R.id.btn_contrasena);
         btn_invitado = (Button)v.findViewById(R.id.btn_invitado);
+
+        btn_entrar.setOnClickListener(onClickListener);
+        btn_crear.setOnClickListener(onClickListener);
+        btn_contrasena.setOnClickListener(onClickListener);
+        btn_invitado.setOnClickListener(onClickListener);
 
         return v;
     }

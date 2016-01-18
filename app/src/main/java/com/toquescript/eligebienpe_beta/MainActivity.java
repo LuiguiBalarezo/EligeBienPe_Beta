@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
     }
 
     private List<Candidates> getListItemData() {
-        List<Candidates> listViewItems = new ArrayList<Candidates>();
+        List<Candidates> listViewItems = new ArrayList<>();
         listViewItems.add(new Candidates(R.drawable.three));
         listViewItems.add(new Candidates(R.drawable.three));
         listViewItems.add(new Candidates(R.drawable.three));
@@ -97,15 +97,18 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
     @Override
     public void onClikEntrar() {
         Toast.makeText(mContext, "entrar", Toast.LENGTH_SHORT).show();
+        transactionFragments(fragment_entrar, true);
     }
 
     @Override
     public void onClickCrear() {
         Toast.makeText(mContext, "Crear", Toast.LENGTH_SHORT).show();
+        transactionFragments(fragment_crearcuenta, true);
     }
     @Override
     public void onClickContrasena() {
         Toast.makeText(mContext, "Contrase;a", Toast.LENGTH_SHORT).show();
+        transactionFragments(fragment_olvidocontrasena, true);
     }
 
     @Override
@@ -113,5 +116,14 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
         Toast.makeText(mContext, "invitado", Toast.LENGTH_SHORT).show();
     }
 
+
+    private void transactionFragments(Fragment f, boolean isaddToBack) {
+        ft = fm.beginTransaction();
+        ft.replace(R.id.container, f);
+        if (isaddToBack) {
+            ft.addToBackStack(null);
+        }
+        ft.commit();
+    }
 
 }
