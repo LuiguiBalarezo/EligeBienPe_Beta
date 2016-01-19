@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
     public void onClikEntrar() {
         Toast.makeText(mContext, "entrar", Toast.LENGTH_SHORT).show();
         transactionFragments(fragment_entrar, true);
+
     }
 
     @Override
