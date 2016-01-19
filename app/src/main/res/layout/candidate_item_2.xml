@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_candidate_principal"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"/>
+
+
+        <Button
+            android:id="@+id/btn_like"
+            android:text="♥"
+            android:background="@null"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true" />
+
+
+        <Button
+            android:id="@+id/btn_proposals"
+            android:text="▄"
+            android:background="@null"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/btn_like"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/txt_name_candidate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre Candidato"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btn_like"
+            android:layout_toRightOf="@+id/img_candidate_principal"
+            android:layout_toEndOf="@+id/img_candidate_principal" />
+
+        <TextView
+            android:text="Nombre de Partido"
+            android:id="@+id/txt_political_party"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/likbtn_likee"
+            android:layout_toRightOf="@+id/img_candidate_principal"
+            android:layout_toEndOf="@+id/img_candidate_principal"
+            android:layout_below="@id/txt_name_candidate"/>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

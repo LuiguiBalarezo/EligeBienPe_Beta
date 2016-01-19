@@ -12,10 +12,10 @@ import com.toquescript.eligebienpe_beta.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_CrearCuenta extends Fragment {
+public class Fragment_SignUp extends Fragment {
 
 
-    public Fragment_CrearCuenta() {
+    public Fragment_SignUp() {
         // Required empty public constructor
     }
 

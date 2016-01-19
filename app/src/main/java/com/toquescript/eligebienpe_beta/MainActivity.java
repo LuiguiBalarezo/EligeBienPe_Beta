@@ -2,6 +2,7 @@ package com.toquescript.eligebienpe_beta;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,27 +10,26 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import adapters.SolventRecyclerViewAdapter;
-import layout.Fragment_CrearCuenta;
-import layout.Fragment_Entrar;
+import layout.Fragment_SignUp;
+import layout.Fragment_Sign;
 import layout.Fragment_Login;
-import layout.Fragment_OlvidoContrasena;
+import layout.Fragment_ForgotPassword;
 import models.Candidates;
 
 public class MainActivity extends AppCompatActivity implements Fragment_Login.EventsLogin {
 
     public static Context mContext;
     public static Activity mActivity;
+    private Intent intent;
 
     private StaggeredGridLayoutManager gaggeredGridLayoutManager;
     SolventRecyclerViewAdapter rcAdapter;
-
     RecyclerView recyclerView;
 
     FragmentManager fm;
@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
         mActivity = MainActivity.this;
 
         fragment_login = new Fragment_Login();
-        fragment_crearcuenta = new Fragment_CrearCuenta();
-        fragment_entrar = new Fragment_Entrar();
-        fragment_olvidocontrasena = new Fragment_OlvidoContrasena();
+        fragment_crearcuenta = new Fragment_SignUp();
+        fragment_entrar = new Fragment_Sign();
+        fragment_olvidocontrasena = new Fragment_ForgotPassword();
 
 
         if(savedInstanceState == null){
@@ -58,12 +58,13 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
 
 
         gaggeredGridLayoutManager = new StaggeredGridLayoutManager(3, 1);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerview_candidate);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview_login_candidate);
         recyclerView.setLayoutManager(gaggeredGridLayoutManager);
         recyclerView.setHasFixedSize(true);
         List<Candidates> gaggeredList = getListItemData();
 
-        rcAdapter = new SolventRecyclerViewAdapter(this, gaggeredList);
+        rcAdapter = new SolventRecyclerViewAdapter(gaggeredList);
         recyclerView.setAdapter(rcAdapter);
 
     }
@@ -98,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
     public void onClikEntrar() {
         Toast.makeText(mContext, "entrar", Toast.LENGTH_SHORT).show();
         transactionFragments(fragment_entrar, true);
-
     }
 
     @Override
@@ -115,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
     @Override
     public void onClickInvitado() {
         Toast.makeText(mContext, "invitado", Toast.LENGTH_SHORT).show();
+        intent = new Intent(mContext, MainActivityPrincipal.class);
+        startActivity(intent);
     }
 
 

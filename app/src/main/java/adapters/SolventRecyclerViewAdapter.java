@@ -19,11 +19,9 @@ import models.Candidates;
 public class SolventRecyclerViewAdapter  extends RecyclerView.Adapter<SolventViewHolders> {
 
     private List<Candidates> itemList;
-    private Context context;
 
-    public SolventRecyclerViewAdapter(Context context, List<Candidates> itemList) {
+    public SolventRecyclerViewAdapter(List<Candidates> itemList) {
         this.itemList = itemList;
-        this.context = context;
     }
 
     @Override

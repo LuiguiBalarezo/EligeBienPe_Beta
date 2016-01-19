@@ -12,17 +12,19 @@ import com.toquescript.eligebienpe_beta.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_OlvidoContrasena extends Fragment {
+public class Fragment_Sign extends Fragment {
 
-    public Fragment_OlvidoContrasena() {
 
+    public Fragment_Sign() {
+        // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_olvido_contrasena, container, false);
+        return inflater.inflate(R.layout.fragment_entrar, container, false);
     }
 
 }
