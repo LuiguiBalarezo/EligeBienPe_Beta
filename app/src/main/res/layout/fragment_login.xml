@@ -16,7 +16,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/logo"
+        android:layout_below="@id/logo"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/back_content_login"
@@ -39,7 +39,7 @@
             android:id="@+id/btn_twitter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_face"
+            android:layout_below="@id/btn_face"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
@@ -53,7 +53,7 @@
             android:id="@+id/btn_plus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_twitter"
+            android:layout_below="@id/btn_twitter"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/back_btn_plus"
@@ -66,7 +66,7 @@
             android:id="@+id/rltv_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_plus">
+            android:layout_below="@id/btn_plus">
 
             <TextView
                 android:id="@+id/txt_o"
@@ -84,16 +84,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/txt_o"
-                android:layout_toRightOf="@+id/txt_o"
+                android:layout_toEndOf="@id/txt_o"
+                android:layout_toRightOf="@id/txt_o"
                 android:background="@android:color/holo_red_dark" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/txt_o"
-                android:layout_toStartOf="@+id/txt_o"
+                android:layout_toLeftOf="@id/txt_o"
+                android:layout_toStartOf="@id/txt_o"
                 android:background="@android:color/holo_red_dark" />
 
         </RelativeLayout>
@@ -104,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/rltv_2"
+            android:layout_below="@id/rltv_2"
             android:background="@drawable/back_btn_primary"
             android:text="Entrar"
             android:paddingLeft="10dp"
@@ -116,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/btn_entrar"
+            android:layout_alignTop="@id/btn_entrar"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:background="@drawable/back_btn_primary"
@@ -129,9 +129,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Olvido Contraseña?"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_alignLeft="@+id/relativeLayout"
-        android:layout_alignStart="@+id/relativeLayout"
+        android:layout_below="@id/relativeLayout"
+        android:layout_alignLeft="@id/relativeLayout"
+        android:layout_alignStart="@id/relativeLayout"
         android:textSize="9sp"
         android:id="@+id/btn_contrasena" />
 
@@ -141,9 +141,9 @@
         android:text="Ingresar como invitado"
         android:id="@+id/btn_invitado"
         android:textSize="9sp"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_alignRight="@+id/relativeLayout"
-        android:layout_alignEnd="@+id/relativeLayout" />
+        android:layout_below="@id/relativeLayout"
+        android:layout_alignRight="@id/relativeLayout"
+        android:layout_alignEnd="@id/relativeLayout" />
 
 
 </RelativeLayout>

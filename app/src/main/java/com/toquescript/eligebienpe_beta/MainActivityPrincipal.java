@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import layout.Fragment_Principal;
 
@@ -20,6 +21,11 @@ public class MainActivityPrincipal extends AppCompatActivity {
 
     Fragment fragment_principal;
 
+
+    //<editor-fold desc="Views">
+    Toolbar toolbar;
+    //</editor-fold>
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +35,15 @@ public class MainActivityPrincipal extends AppCompatActivity {
         mContext = getApplicationContext();
         mActivity = MainActivityPrincipal.this;
 
+
+        //<editor-fold desc="Cast Views">
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Candidatos Presidenciales");
+        //</editor-fold>
+
         fragment_principal = new Fragment_Principal();
+
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_principal).commit();
