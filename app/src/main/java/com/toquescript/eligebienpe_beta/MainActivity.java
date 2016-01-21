@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.Eve
 
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment_login).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment_login).addToBackStack(null).commit();
         }
 
 

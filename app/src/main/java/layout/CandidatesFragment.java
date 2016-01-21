@@ -1,6 +1,7 @@
 package layout;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.toquescript.eligebienpe_beta.R;
 
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapters.CandidateRecycleViewAdapters;
+import interfaces.ItemClickListener;
 import models.Candidates;
 
 /**
@@ -27,9 +30,26 @@ public class CandidatesFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    EventsCandidates eventsCandidates;
+
+
+    public interface EventsCandidates {
+        void onClickItem();
+    }
 
     public CandidatesFragment() {
-        // Required empty public constructor
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            eventsCandidates = (EventsCandidates) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
     }
 
 
@@ -46,7 +66,13 @@ public class CandidatesFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         List<Candidates> gaggeredList = getListItemData();
 
-        adapter = new CandidateRecycleViewAdapters(gaggeredList);
+        adapter = new CandidateRecycleViewAdapters(getActivity(), gaggeredList, new ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(getActivity().getApplicationContext(), "salio ctmr", Toast.LENGTH_SHORT).show();
+                eventsCandidates.onClickItem();
+            }
+        });
         recyclerView.setAdapter(adapter);
 
         return view;

@@ -3,18 +3,16 @@ package com.toquescript.eligebienpe_beta;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import layout.CandidatesFragment;
+import layout.DetailsCandiateFragment;
 
-public class MainActivityPrincipal extends AppCompatActivity {
+public class MainActivityPrincipal extends AppCompatActivity implements CandidatesFragment.EventsCandidates {
 
     public static Context mContext;
     public static Activity mActivity;
@@ -22,19 +20,12 @@ public class MainActivityPrincipal extends AppCompatActivity {
     FragmentManager fm;
     FragmentTransaction ft;
 
-    Fragment fragment_candidates;
+    Fragment fragment_principal, fragment_detailsCandidates;
 
 
     //<editor-fold desc="Views">
     Toolbar toolbar;
-    TabLayout tabLayout;
-//    ViewPager viewPager;ViewPager viewPager;
     //</editor-fold>
-
-    public void createInstance() {
-        getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_candidates).commit();
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +43,18 @@ public class MainActivityPrincipal extends AppCompatActivity {
         getSupportActionBar().setTitle("Candidatos Presidenciales");
         //</editor-fold>
 
-        fragment_candidates = new CandidatesFragment();
+        fragment_principal = new CandidatesFragment();
+        fragment_detailsCandidates = new DetailsCandiateFragment();
 
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_candidates).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_principal).commit();
         }
 
+    }
+
+    @Override
+    public void onClickItem() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_main, fragment_detailsCandidates).addToBackStack(null).commit();
     }
 }
