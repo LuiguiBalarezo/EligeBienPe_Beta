@@ -12,10 +12,10 @@ import com.toquescript.eligebienpe_beta.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_Sign extends Fragment {
+public class BenchPresidentialFragment extends Fragment {
 
 
-    public Fragment_Sign() {
+    public BenchPresidentialFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class Fragment_Sign extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_entrar, container, false);
+        return inflater.inflate(R.layout.fragment_bench_presidential, container, false);
     }
 
 }

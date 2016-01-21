@@ -12,7 +12,7 @@ import android.widget.Button;
 import com.toquescript.eligebienpe_beta.R;
 
 
-public class Fragment_Login extends Fragment {
+public class LoginFragment extends Fragment {
 
     View v;
 
@@ -31,7 +31,7 @@ public class Fragment_Login extends Fragment {
     }
 
 
-    public Fragment_Login() {
+    public LoginFragment() {
     }
 
     @Override

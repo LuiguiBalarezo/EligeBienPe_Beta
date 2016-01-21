@@ -3,13 +3,16 @@ package com.toquescript.eligebienpe_beta;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
-import layout.Fragment_Principal;
+import layout.CandidatesFragment;
 
 public class MainActivityPrincipal extends AppCompatActivity {
 
@@ -19,12 +22,19 @@ public class MainActivityPrincipal extends AppCompatActivity {
     FragmentManager fm;
     FragmentTransaction ft;
 
-    Fragment fragment_principal;
+    Fragment fragment_candidates;
 
 
     //<editor-fold desc="Views">
     Toolbar toolbar;
+    TabLayout tabLayout;
+//    ViewPager viewPager;ViewPager viewPager;
     //</editor-fold>
+
+    public void createInstance() {
+        getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_candidates).commit();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +52,11 @@ public class MainActivityPrincipal extends AppCompatActivity {
         getSupportActionBar().setTitle("Candidatos Presidenciales");
         //</editor-fold>
 
-        fragment_principal = new Fragment_Principal();
+        fragment_candidates = new CandidatesFragment();
 
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_principal).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_candidates).commit();
         }
 
     }

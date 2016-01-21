@@ -20,7 +20,7 @@ import models.Candidates;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_Principal extends Fragment {
+public class CandidatesFragment extends Fragment {
 
     View view;
 
@@ -28,7 +28,7 @@ public class Fragment_Principal extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    public Fragment_Principal() {
+    public CandidatesFragment() {
         // Required empty public constructor
     }
 
@@ -37,7 +37,7 @@ public class Fragment_Principal extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_principal, container, false);
+        view = inflater.inflate(R.layout.fragment_candidates, container, false);
 
         layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
 
@@ -46,11 +46,8 @@ public class Fragment_Principal extends Fragment {
         recyclerView.setHasFixedSize(true);
         List<Candidates> gaggeredList = getListItemData();
 
-
-
         adapter = new CandidateRecycleViewAdapters(gaggeredList);
         recyclerView.setAdapter(adapter);
-
 
         return view;
     }

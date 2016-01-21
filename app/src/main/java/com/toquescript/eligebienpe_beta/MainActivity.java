@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapters.SolventRecyclerViewAdapter;
-import layout.Fragment_SignUp;
-import layout.Fragment_Sign;
-import layout.Fragment_Login;
-import layout.Fragment_ForgotPassword;
+import layout.SignUpFragment;
+import layout.SignFragment;
+import layout.LoginFragment;
+import layout.ForgotPasswordFragment;
 import models.Candidates;
 
-public class MainActivity extends AppCompatActivity implements Fragment_Login.EventsLogin {
+public class MainActivity extends AppCompatActivity implements LoginFragment.EventsLogin {
 
     public static Context mContext;
     public static Activity mActivity;
@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity implements Fragment_Login.Ev
         mContext = getApplicationContext();
         mActivity = MainActivity.this;
 
-        fragment_login = new Fragment_Login();
-        fragment_crearcuenta = new Fragment_SignUp();
-        fragment_entrar = new Fragment_Sign();
-        fragment_olvidocontrasena = new Fragment_ForgotPassword();
+        fragment_login = new LoginFragment();
+        fragment_crearcuenta = new SignUpFragment();
+        fragment_entrar = new SignFragment();
+        fragment_olvidocontrasena = new ForgotPasswordFragment();
 
 
         if(savedInstanceState == null){

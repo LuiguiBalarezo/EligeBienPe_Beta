@@ -6,17 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.toquescript.eligebienpe_beta.MainActivityPrincipal;
 import com.toquescript.eligebienpe_beta.R;
 
 import java.util.List;
 
 import holders.CandidateViewHolder;
+import interfaces.ItemClickListener;
 import models.Candidates;
 
 /**
  * Created by BALAREZO on 19/01/2016.
  */
-public class CandidateRecycleViewAdapters extends RecyclerView.Adapter<CandidateViewHolder> {
+public class CandidateRecycleViewAdapters extends RecyclerView.Adapter<CandidateViewHolder> implements ItemClickListener{
 
     private List<Candidates> itemList;
     private Context context;
@@ -43,5 +45,10 @@ public class CandidateRecycleViewAdapters extends RecyclerView.Adapter<Candidate
     @Override
     public int getItemCount() {
         return itemList.size();
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        ((MainActivityPrincipal)context).createInstance();
     }
 }

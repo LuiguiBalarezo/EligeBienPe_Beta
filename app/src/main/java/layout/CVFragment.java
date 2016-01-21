@@ -12,17 +12,19 @@ import com.toquescript.eligebienpe_beta.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_ForgotPassword extends Fragment {
+public class CVFragment extends Fragment {
 
-    public Fragment_ForgotPassword() {
 
+    public CVFragment() {
+        // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_olvido_contrasena, container, false);
+        return inflater.inflate(R.layout.fragment_cv, container, false);
     }
 
 }
