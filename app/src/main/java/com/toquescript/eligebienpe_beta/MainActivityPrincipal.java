@@ -9,10 +9,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import layout.CandidateFlexibleFragment;
 import layout.CandidatesFragment;
 import layout.DetailsCandiateFragment;
 
-public class MainActivityPrincipal extends AppCompatActivity implements CandidatesFragment.EventsCandidates {
+public class MainActivityPrincipal extends AppCompatActivity implements CandidatesFragment.EventsCandidates, CandidateFlexibleFragment.EventsCandidatesFlexible {
 
     public static Context mContext;
     public static Activity mActivity;
@@ -20,11 +21,11 @@ public class MainActivityPrincipal extends AppCompatActivity implements Candidat
     FragmentManager fm;
     FragmentTransaction ft;
 
-    Fragment fragment_principal, fragment_detailsCandidates;
+    Fragment fragment_principal, fragment_detailsCandidates, fragment_detailsCandidatesFlexible;
 
 
     //<editor-fold desc="Views">
-    Toolbar toolbar;
+
     //</editor-fold>
 
     @Override
@@ -36,16 +37,9 @@ public class MainActivityPrincipal extends AppCompatActivity implements Candidat
         mContext = getApplicationContext();
         mActivity = MainActivityPrincipal.this;
 
-
-        //<editor-fold desc="Cast Views">
-        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Candidatos Presidenciales");
-        //</editor-fold>
-
         fragment_principal = new CandidatesFragment();
         fragment_detailsCandidates = new DetailsCandiateFragment();
-
+        fragment_detailsCandidatesFlexible = new CandidateFlexibleFragment();
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().add(R.id.container_main, fragment_principal).commit();
@@ -55,6 +49,16 @@ public class MainActivityPrincipal extends AppCompatActivity implements Candidat
 
     @Override
     public void onClickItem() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.container_main, fragment_detailsCandidates).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_main, fragment_detailsCandidatesFlexible).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void onBackPressedCandidates() {
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressedFlexible() {
+        onBackPressed();
     }
 }

@@ -20,7 +20,7 @@ public class DetailsCandiateFragment extends Fragment {
 
     //<editor-fold desc="Views">
     View view;
-    ViewPager viewPager;
+//    ViewPager viewPager;
     //</editor-fold>
 
     public DetailsCandiateFragment() {
@@ -33,19 +33,19 @@ public class DetailsCandiateFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_details_candiate, container, false);
 
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+//        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
+//        setupViewPager(viewPager);
         return view;
 
     }
 
-    private void setupViewPager(ViewPager viewPager){
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new CVFragment(), "CV");
-        adapter.addFragment(new ProposalsFragment(), "Propuestas");
-        adapter.addFragment(new BenchPresidentialFragment(), "Bancada Presidencial");
-        adapter.addFragment(new ActivitiesFragment(), "Actividades");
-        viewPager.setAdapter(adapter);
-    }
+//    private void setupViewPager(ViewPager viewPager){
+//        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+//        adapter.addFragment(new CVFragment(), "CV");
+//        adapter.addFragment(new ProposalsFragment(), "Propuestas");
+//        adapter.addFragment(new BenchPresidentialFragment(), "Bancada Presidencial");
+//        adapter.addFragment(new ActivitiesFragment(), "Actividades");
+//        viewPager.setAdapter(adapter);
+//    }
 
 }
